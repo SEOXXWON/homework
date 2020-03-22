@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Webpage Title -->
+    <title>주문서 페이지</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <!-- 스타일 적용 -->
+    <style>
+        * {
+            width: 750px;
+            margin: 10px auto;
+            font-family: 'Do Hyeon', sans-serif;
+        }
+
+
+
+        
+
+    </style>
+
+    <!-- 구글폰트  -->
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+
+    <script>
+
+        function order() {
+
+
+
+            // 옵션선택 검증
+            let option1 = $('#exampleFormControlSelect1-1').val();
+            if (option1 == '===선택하세요===') {
+                alert('마스크 종류를 반드시 선택하세요!');
+                $('#exampleFormControlSelect1-1').focus();
+
+                return;
+            }
+
+
+            // 수량선택 검증
+            let option2 = $('#exampleFormControlSelect1-2').val();
+            if (option2 == '===선택하세요===') {
+                alert('수량을 반드시 선택하세요!');
+                $('#exampleFormControlSelect1-2').focus();
+
+                return;
+            }
+
+
+
+            // 주문자 성함 검증
+            let nameblank = $('#inputAddress-1').val();
+            if (nameblank == '') {
+                alert('성함을 반드시 입력하세요!');
+                $('#inputAddress-1').focus();
+
+                return;
+
+            }
+
+            // 핸드폰번호 검증
+            let numberblank = $('#inputAddress-2').val();
+            if (numberblank == '') {
+                alert('번호를 반드시 입력하세요!');
+                $('#inputAddress-2').focus();
+
+                return;
+            }
+
+            // 주소 검증
+            let adblank = $('#inputAddress-3').val();
+            if (adblank == '') {
+                alert('주소를 반드시 입력하세요!');
+                $('#inputAddress-3').focus();
+
+                return;
+            }
+
+
+            // 배송메세지 검증
+            let option3 = $('#exampleFormControlSelect1-3').val();
+            if (option3 == '===선택하세요===') {
+                alert('배송메세지를 반드시 선택하세요!');
+                $('#exampleFormControlSelect1-3').focus();
+
+                return;
+            }
+
+
+            let orderlist = '<li>'+ option1  +'&nbsp'+ option2 + '&nbsp'+ nameblank + '&nbsp'+ numberblank +'&nbsp'+ adblank +'&nbsp'+ option3 +'</li>';
+            $('#orderreport').append(orderlist);
+
+
+        }
+
+
+
+
+
+    </script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <!-- 상품기본정보 -->
+    <div class="card" style="width:47rem;">
+        <img class="card-img-top" src="https://www.dailydental.co.kr/data/photos/20200206/art_158080717127_a7f51c.jpg"
+            alt="Card image cap" style="height:28rem; font-weight:bold;">
+        <div class="card-body">
+            <h2 class="card-text">국내제작 황사 미세먼지 코로나 방역마스크 KF94 KF80</h2>
+            <h3>￦5,000</h3>
+        </div>
+    </div>
+
+
+    <!-- 상품상세설명 -->
+    <div class="card">
+        <div class="card-header">
+            <a href="http://naver.com/"> 4.5 ★★★★☆ 11건 리뷰 보러가기 </a>
+
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>미세먼지미세먼지메세먼지 황사황사 코로나코로나코로나나우한우한 바이러스 예방하세요
+                </p>
+                <footer class="blockquote-footer"> 식품의약품안전처 인증 마스크입니다.</footer>
+            </blockquote>
+        </div>
+    </div>
+
+
+    <!-- 상품에 대한 옵션선택 -->
+    <div class="dropboxoption">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">옵션 선택</label>
+            <select class="form-control" id="exampleFormControlSelect1-1">
+                <option>===선택하세요===</option>
+                <option>KF94</option>
+                <option>KF80</option>
+                <option>덴탈마스크</option>
+                <option>면마스크</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">수량 선택</label>
+            <select class="form-control" id="exampleFormControlSelect1-2">
+                <option>===선택하세요===</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- 구매자 정보 -->
+    <form>
+
+        <div class="form-group">
+            <label for="inputAddress">주문자 성함</label>
+            <input type="text" class="form-control" id="inputAddress-1" placeholder="홍길동">
+        </div>
+
+
+        <div class="form-group">
+            <label for="inputAddress">주문자 번호</label>
+            <input type="text" class="form-control" id="inputAddress-2" placeholder="개인 핸드폰 번호 필수">
+        </div>
+
+
+        <div class="form-group">
+            <label for="inputAddress">도로명주소</label>
+            <input type="text" class="form-control" id="inputAddress-3" placeholder="도로명, 건물명, 지번, 동호수">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">배송 메세지 선택</label>
+            <select class="form-control" id="exampleFormControlSelect1-3">
+                <option>===선택하세요===</option>
+                <option>배송 전 미리 연락 바랍니다.</option>
+                <option>현관문 앞에 두고 가주세요.</option>
+                <option>부재시 경비실에 맡겨 주세요</option>
+                <option>부재시 전화나 문자 주세요.</option>
+            </select>
+        </div>
+
+
+
+
+
+
+
+
+        <!-- 체크박스(아쉬운 부분) -->
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck"> 개인정보활용 동의 및 결제진행 동의
+
+            </div>
+
+        </div>
+
+
+        <button type="button" onclick="order()" class="btn btn-primary btn-lg">주문하기</button>
+        <ul class="orderreport" id="orderreport">
+        </ul>
+  
+
+    </form>
+
+
+    </div>
+
+
+</body>
+
+</html>
